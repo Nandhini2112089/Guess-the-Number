@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess the Number!!</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        input {
+            padding: 8px;
+            margin: 10px;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        button:hover {
+            background: linear-gradient(to right, #3498db, #8e44ad);
+        }
+
+        p {
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Guess the Number from 1 to 10</h1>
+    <input id="num">
+    <button onclick="checkfun()">Check</button>
+    <p id="res">You are Wrong/Right</p>
+    <p id="sc">Score: 10</p>
+
+    <script>
+        var b = document.getElementById("num");
+        var r = document.getElementById("res");
+        var c = Math.floor(Math.random() * 10) + 1;
+        var s = document.getElementById("sc");
+        var score = 10;
+
+        function checkfun() {
+            if (b.value == c) {
+                r.textContent = "Right";
+                alert("You are Right");
+            } else {
+                score = score - 1;
+                s.textContent = "Score: " + score;
+                r.textContent = "Wrong";
+            }
+        }
+    </script>
+</body>
+</html>
